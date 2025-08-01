@@ -1,0 +1,76 @@
+body {
+  background: linear-gradient(to right, #0f0f0f, #1c1c1c);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: #00ffee;
+  font-family: 'Courier New', monospace;
+  margin: 0;
+}
+
+.clock {
+  width: 300px;
+  height: 300px;
+  border: 8px solid #00ffee;
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 0 20px #00ffeeaa;
+  background: radial-gradient(circle, #222 30%, #000);
+}
+
+.hand {
+  width: 50%;
+  height: 4px;
+  position: absolute;
+  top: 50%;
+  transform-origin: 100%;
+  transform: rotate(0deg);
+  transition: all 0.05s ease-in-out;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.hour {
+  height: 6px;
+  background: #ff00ff;
+}
+
+.minute {
+  height: 4px;
+  background: #00ff00;
+}
+
+.second {
+  height: 2px;
+  background: red;
+}
+
+.number {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  color: #00ffee;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transform: rotate(calc(30deg * var(--n))) translate(130px) rotate(calc(-30deg * var(--n)));
+  left: 50%;
+  top: 50%;
+  transform-origin: center;
+  text-shadow: 0 0 4px #00ffee;
+}
+
+.digital {
+  font-size: 2rem;
+  margin-top: 20px;
+  color: #00ffee;
+  text-shadow: 0 0 5px #00ffee88;
+}
+
+.label {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  color: #aaa;
+}
