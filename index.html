@@ -2,36 +2,57 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Backward Clock</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reverse Clock Time Travel</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <div class="clock">
-    <!-- Numbers -->
-    <div class="number" style="--n:1;">1</div>
-    <div class="number" style="--n:2;">2</div>
-    <div class="number" style="--n:3;">3</div>
-    <div class="number" style="--n:4;">4</div>
-    <div class="number" style="--n:5;">5</div>
-    <div class="number" style="--n:6;">6</div>
-    <div class="number" style="--n:7;">7</div>
-    <div class="number" style="--n:8;">8</div>
-    <div class="number" style="--n:9;">9</div>
-    <div class="number" style="--n:10;">10</div>
-    <div class="number" style="--n:11;">11</div>
-    <div class="number" style="--n:12;">12</div>
+  <div class="main-container">
+    <!-- Clock Section -->
+    <div class="left-panel">
+      <div class="clock">
+        <div class="hand hour" id="hour-hand"></div>
+        <div class="hand minute" id="minute-hand"></div>
+        <div class="hand second" id="second-hand"></div>
+        <!-- Numbers 1 to 12 -->
+        <div class="number" style="--n:1">1</div>
+        <div class="number" style="--n:2">2</div>
+        <div class="number" style="--n:3">3</div>
+        <div class="number" style="--n:4">4</div>
+        <div class="number" style="--n:5">5</div>
+        <div class="number" style="--n:6">6</div>
+        <div class="number" style="--n:7">7</div>
+        <div class="number" style="--n:8">8</div>
+        <div class="number" style="--n:9">9</div>
+        <div class="number" style="--n:10">10</div>
+        <div class="number" style="--n:11">11</div>
+        <div class="number" style="--n:12">12</div>
+      </div>
 
-    <!-- Hands -->
-    <div class="hand hour" id="hour-hand"></div>
-    <div class="hand minute" id="minute-hand"></div>
-    <div class="hand second" id="second-hand"></div>
+      <div class="digital" id="digital-clock">00:00:00</div>
+      <div class="label">Backward Time Machine</div>
+
+      <div class="controls">
+        <button onclick="toggleTimeTravel()">🌀 Engage Time Travel</button>
+        <div id="status">⏳ Awaiting command...</div>
+      </div>
+    </div>
+
+    <!-- Face Scanner + Results Section -->
+    <div class="right-panel">
+      <div class="scanner">
+        <video id="webcam" autoplay playsinline></video>
+      </div>
+
+      <div class="results">
+        <div id="beard-info">🧔 Detecting facial hair...</div>
+        <div id="animal-info">🔮 Calculating past life form...</div>
+      </div>
+    </div>
   </div>
 
-  <!-- Digital clock -->
-  <div id="digital-clock" class="digital">00:00:00</div>
-
-  <div class="label">⏪ Backward Time Machine</div>
+  <!-- Fake Cursor -->
+  <div id="fake-cursor"></div>
 
   <script src="js/script.js"></script>
 </body>
